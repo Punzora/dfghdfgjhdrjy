@@ -42,6 +42,10 @@ app.post('/webhook', (req, res) => {
     // LED On
     ledOn(sender, text)
   }
+   else if (text === 'ข้ารับใช้' || text === 'ONGAS') {
+   // LED On
+   ledOn(sender, text)
+  }
   else if (text === '0' || text === 'ปิด1' || text === 'off1') {
     // LED Off
     ledOff(sender, text)
