@@ -77,42 +77,9 @@ function sendText (sender, text) {
     to: sender,
     messages: [
     {
-  "type": "bubble",
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "spacing": "md",
-    "contents": [
-      {
-        "type": "button",
-        "style": "primary",
-        "action": {
-          "type": "uri",
-          "label": "Primary style button",
-          "uri": "https://developers.line.me"
-        }
-      },
-      {
-        "type": "button",
-        "style": "secondary",
-        "action": {
-          "type": "uri",
-          "label": "Secondary style button",
-          "uri": "https://developers.line.me"
-        }
-      },
-      {
-        "type": "button",
-        "style": "link",
-        "action": {
-          "type": "uri",
-          "label": "Link style button",
-          "uri": "https://developers.line.me"
-        }
-      }
-    ]
-  }
-}
+        type: 'text',
+        text: 'กรุณาพิมพ์ : info | on | off | เปิด | ปิด เท่านั้น'
+    }
     ]
   }
   request({
