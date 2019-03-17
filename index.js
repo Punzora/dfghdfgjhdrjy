@@ -38,14 +38,33 @@ app.post('/webhook', (req, res) => {
     // Info
     inFo(sender, text)
   }
-  else if (text === '1' || text === 'เปิด' || text === 'on') {
+  else if (text === '1' || text === 'เปิด1' || text === 'on1') {
     // LED On
     ledOn(sender, text)
   }
-  else if (text === '0' || text === 'ปิด' || text === 'off') {
+  else if (text === '0' || text === 'ปิด1' || text === 'off1') {
     // LED Off
     ledOff(sender, text)
   }
+
+  else if (text === '2' || text === 'เปิด2' || text === 'on2') {
+    // LED On
+    ledOn2(sender, text)
+  }
+  else if (text === '3' || text === 'ปิด2' || text === 'off2') {
+    // LED Off
+    ledOff2(sender, text)
+  }
+
+  else if (text === '4' || text === 'เปิด3' || text === 'on3') {
+    // LED On
+    ledOn3(sender, text)
+  }
+  else if (text === '5' || text === 'ปิด3' || text === 'off3') {
+    // LED Off
+    ledOff3(sender, text)
+  }
+
   else {
     // Other
     sendText(sender, text);
@@ -115,7 +134,7 @@ function ledOn (sender, text) {
       });
       
       // publish a message to a topic
-      client.publish(mqtt_topic, 'on', function() {
+      client.publish(mqtt_topic, 'on1', function() {
           console.log("Message is published");
           client.end(); // Close the connection when published
       });
@@ -127,7 +146,7 @@ function ledOn (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'LED ON'
+        text: 'ไฟดวงที่1เปิดเเล้วขอรับนายท่าน'
       }
     ]
   }
@@ -159,7 +178,7 @@ function ledOff (sender, text) {
       });
       
       // publish a message to a topic
-      client.publish(mqtt_topic, 'off', function() {
+      client.publish(mqtt_topic, 'off1', function() {
           console.log("Message is published");
           client.end(); // Close the connection when published
       });
@@ -170,7 +189,181 @@ function ledOff (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'LED OFF'
+        text: 'ไฟดวงที่.1.ปิดเเล้วขอรับนายท่าน'
+      }
+    ]
+  }
+  request({
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '+CH_ACCESS_TOKEN+''
+    },
+    url: 'https://api.line.me/v2/bot/message/push',
+    method: 'POST',
+    body: data,
+    json: true
+  }, function (err, res, body) {
+    if (err) console.log('error')
+    if (res) console.log('success')
+    if (body) console.log(body)
+  })
+}
+function ledOn2 (sender, text) {
+  var client = mqtt.connect(mqtt_host, options);
+  client.on('connect', function() { // When connected
+      console.log('MQTT connected');
+      // subscribe to a topic
+      client.subscribe(mqtt_topic, function() {
+          // when a message arrives, do something with it
+          client.on('message', function(topic, message, packet) {
+              console.log("Received '" + message + "' on '" + topic + "'");
+          });
+      });
+      
+      // publish a message to a topic
+      client.publish(mqtt_topic, 'on2', function() {
+          console.log("Message is published");
+          client.end(); // Close the connection when published
+      });
+      
+  });
+    
+  let data = {
+    to: sender,
+    messages: [
+      {
+        type: 'text',
+        text: 'ไฟดวงที่.2.เปิดเเล้วขอรับนายท่าน'
+      }
+    ]
+  }
+  request({
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '+CH_ACCESS_TOKEN+''
+    },
+    url: 'https://api.line.me/v2/bot/message/push',
+    method: 'POST',
+    body: data,
+    json: true
+  }, function (err, res, body) {
+    if (err) console.log('error')
+    if (res) console.log('success')
+    if (body) console.log(body)
+  })
+}
+function ledOff2 (sender, text) {
+  var client = mqtt.connect(mqtt_host, options);
+  client.on('connect', function() { // When connected
+      console.log('MQTT connected');
+      // subscribe to a topic
+      client.subscribe(mqtt_topic, function() {
+          // when a message arrives, do something with it
+          client.on('message', function(topic, message, packet) {
+              console.log("Received '" + message + "' on '" + topic + "'");
+          });
+      });
+      
+      // publish a message to a topic
+      client.publish(mqtt_topic, 'off2', function() {
+          console.log("Message is published");
+          client.end(); // Close the connection when published
+      });
+      
+  });
+  let data = {
+    to: sender,
+    messages: [
+      {
+        type: 'text',
+        text: 'ไฟดวงที่2ปิดเเล้วขอรับนายท่าน'
+      }
+    ]
+  }
+  request({
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '+CH_ACCESS_TOKEN+''
+    },
+    url: 'https://api.line.me/v2/bot/message/push',
+    method: 'POST',
+    body: data,
+    json: true
+  }, function (err, res, body) {
+    if (err) console.log('error')
+    if (res) console.log('success')
+    if (body) console.log(body)
+  })
+}
+function ledOn3 (sender, text) {
+  var client = mqtt.connect(mqtt_host, options);
+  client.on('connect', function() { // When connected
+      console.log('MQTT connected');
+      // subscribe to a topic
+      client.subscribe(mqtt_topic, function() {
+          // when a message arrives, do something with it
+          client.on('message', function(topic, message, packet) {
+              console.log("Received '" + message + "' on '" + topic + "'");
+          });
+      });
+      
+      // publish a message to a topic
+      client.publish(mqtt_topic, 'on3', function() {
+          console.log("Message is published");
+          client.end(); // Close the connection when published
+      });
+      
+  });
+    
+  let data = {
+    to: sender,
+    messages: [
+      {
+        type: 'text',
+        text: 'ไฟดวงที่3เปิดเเล้วขอรับนายท่าน'
+      }
+    ]
+  }
+  request({
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '+CH_ACCESS_TOKEN+''
+    },
+    url: 'https://api.line.me/v2/bot/message/push',
+    method: 'POST',
+    body: data,
+    json: true
+  }, function (err, res, body) {
+    if (err) console.log('error')
+    if (res) console.log('success')
+    if (body) console.log(body)
+  })
+}
+function ledOff3 (sender, text) {
+  var client = mqtt.connect(mqtt_host, options);
+  client.on('connect', function() { // When connected
+      console.log('MQTT connected');
+      // subscribe to a topic
+      client.subscribe(mqtt_topic, function() {
+          // when a message arrives, do something with it
+          client.on('message', function(topic, message, packet) {
+              console.log("Received '" + message + "' on '" + topic + "'");
+          });
+      });
+      
+      // publish a message to a topic
+      client.publish(mqtt_topic, 'off3', function() {
+          console.log("Message is published");
+          client.end(); // Close the connection when published
+      });
+      
+  });
+  let data = {
+    to: sender,
+    messages: [
+      {
+        type: 'text',
+        text: 'ไฟดวงที่3ปิดเเล้วขอรับนายท่าน'
       }
     ]
   }
