@@ -1,0 +1,22 @@
+{
+  "name": "simpleapp",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zako",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mqtt": "^2.18.8",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
