@@ -64,6 +64,14 @@ app.post('/webhook', (req, res) => {
     // LED Off
     ledOff3(sender, text)
   }
+    else if (text === '6' || text === 'เปิดทั้งหมด' || text === 'onall') {
+    // LED Off
+    ledOnall(sender, text)
+  }
+    else if (text === '7' || text === 'ปิดทั้งหมด' || text === 'offall') {
+    // LED Off
+    ledOffall(sender, text)
+  }
 
   else {
     // Other
@@ -365,6 +373,92 @@ function ledOff3 (sender, text) {
       {
         type: 'text',
         text: 'ไฟดวงที่3ปิดเเล้วขอรับนายท่าน'
+      }
+    ]
+  }
+  request({
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '+CH_ACCESS_TOKEN+''
+    },
+    url: 'https://api.line.me/v2/bot/message/push',
+    method: 'POST',
+    body: data,
+    json: true
+  }, function (err, res, body) {
+    if (err) console.log('error')
+    if (res) console.log('success')
+    if (body) console.log(body)
+  })
+}
+function ledOnall (sender, text) {
+  var client = mqtt.connect(mqtt_host, options);
+  client.on('connect', function() { // When connected
+      console.log('MQTT connected');
+      // subscribe to a topic
+      client.subscribe(mqtt_topic, function() {
+          // when a message arrives, do something with it
+          client.on('message', function(topic, message, packet) {
+              console.log("Received '" + message + "' on '" + topic + "'");
+          });
+      });
+      
+      // publish a message to a topic
+      client.publish(mqtt_topic, 'onall', function() {
+          console.log("Message is published");
+          client.end(); // Close the connection when published
+      });
+      
+  });
+  let data = {
+    to: sender,
+    messages: [
+      {
+        type: 'text',
+        text: 'ไฟทั้งหมดเปิดเเล้วขอรับนายท่าน'
+      }
+    ]
+  }
+  request({
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '+CH_ACCESS_TOKEN+''
+    },
+    url: 'https://api.line.me/v2/bot/message/push',
+    method: 'POST',
+    body: data,
+    json: true
+  }, function (err, res, body) {
+    if (err) console.log('error')
+    if (res) console.log('success')
+    if (body) console.log(body)
+  })
+}
+function ledOffall (sender, text) {
+  var client = mqtt.connect(mqtt_host, options);
+  client.on('connect', function() { // When connected
+      console.log('MQTT connected');
+      // subscribe to a topic
+      client.subscribe(mqtt_topic, function() {
+          // when a message arrives, do something with it
+          client.on('message', function(topic, message, packet) {
+              console.log("Received '" + message + "' on '" + topic + "'");
+          });
+      });
+      
+      // publish a message to a topic
+      client.publish(mqtt_topic, 'offall', function() {
+          console.log("Message is published");
+          client.end(); // Close the connection when published
+      });
+      
+  });
+  let data = {
+    to: sender,
+    messages: [
+      {
+        type: 'text',
+        text: 'ไฟทั้งหมดปิดเเล้วขอรับนายท่าน'
       }
     ]
   }
