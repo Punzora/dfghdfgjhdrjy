@@ -72,6 +72,10 @@ app.post('/webhook', (req, res) => {
     // LED Off
     ledOffall(sender, text)
   }
+    else if (text === '8' || text === 'ปิดทั้งหมด' || text === 'offall') {
+    // LED Off
+    replyMsg(bodyResponse, replyMessage)
+  }
 
   else {
     // Other
@@ -477,6 +481,141 @@ function ledOffall (sender, text) {
     if (body) console.log(body)
   })
 }
+//................................
+function replyMsg(bodyResponse, replyMessage) {
+const LINE_MESSAGING_API = 'https://api.line.me/v2/bot/message';
+const LINE_HEADER = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '+CH_ACCESS_TOKEN+''
+    };
+const replyMsg = (bodyResponse, msg) => {
+  return request({
+    method: `POST`,
+    uri: `${LINE_MESSAGING_API}/reply`,
+    headers: LINE_HEADER,
+    body: JSON.stringify({
+      replyToken: bodyResponse.events[0].replyToken,
+      messages: [msg]
+    })
+  });
+};
+
+const reply = (bodyResponse, msg) => {
+  return request({
+    method: `POST`,
+    uri: `${LINE_MESSAGING_API}/reply`,
+    headers: LINE_HEADER,
+    body: JSON.stringify({
+      replyToken: bodyResponse.events[0].replyToken,
+      messages: [
+        {
+          type: `text`,
+          text: msg
+        }
+      ]
+    })
+  });
+};
+
+const openConsole = (bodyResponse) => {
+  const replyMessage = {
+    "type": "flex",
+    "altText": "แผงควบคุมระบบรดน้ำในฟาร์ม",
+    "contents": {
+      "type": "bubble",
+      "styles": {
+        "footer": {
+          "backgroundColor": "#42b3f4"
+        }
+      },
+      "hero": {
+        "type": "image",
+        "url": "https://firebasestorage.googleapis.com/v0/b/thaifarmer-1be95.appspot.com/o/network-782707_1280.png?alt=media&token=540b3a1c-a172-4b00-a7f1-0d96e9279a56",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "margin": "sm",
+            "text": "Thai Smart Farmer - IoT",
+            "weight": "bold",
+            "size": "md",
+            "wrap": true
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xs",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "baseline",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "แผงควบคุมการรดน้ำในฟาร์ม",
+                    "wrap": true,
+                    "color": "#666666",
+                    "size": "sm",
+                    "flex": 6
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "style": "link",
+            "color": "#FFFFFF",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "เปิดระบบน้ำ",
+              "text": "openValve"
+            }
+          },
+          {
+            "type": "button",
+            "style": "link",
+            "color": "#FFFFFF",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "ปิดระบบน้ำ",
+              "text": "closeValve"
+            }
+          },
+          {
+            "type": "button",
+            "style": "link",
+            "color": "#FFFFFF",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "ตรวจสอบสถานะอุปกรณ์",
+              "text": "status"
+            }
+          }
+        ]
+      }
+    }
+  }
+  replyMsg(bodyResponse, replyMessage);
+};
+//........................................
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
 })
