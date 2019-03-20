@@ -154,10 +154,27 @@ function ledOn (sender, text) {
   let data = {
     to: sender,
     messages: [
-     {
-        type: 'text',
-        text: 'ไฟดวงที่.1.เปิดเเล้วขอรับนายท่าน'
-      }
+    {  
+  "type": "flex",
+  "altText": "this is a flex message",
+  "contents": {
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "hello"
+        },
+        {
+          "type": "text",
+          "text": "world"
+        }
+      ]
+    }
+  }
+}
     ]
   }
   request({
