@@ -154,48 +154,159 @@ function ledOn (sender, text) {
   let data = {
     to: sender,
     messages: [
-     {
-  "type": "bubble",
-  "header": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "header"
+    {
+  "line": {
+      "type": "flex",
+        "altText": "ข้อความที่แสดง",
+        "contents":
+{
+
+    "type": "bubble",
+    "styles": {
+      "footer": {
+        "backgroundColor": "#42b3f4"
       }
-    ]
-  },
-  "hero": {
-    "type": "image",
-    "url": "https://www.linefriends.com/img/img_sec.jpg",
-    "size": "full",
-    "aspectRatio": "2:1"
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "body"
-      },
-	  {
-        "type": "text",
-        "text": "body"
+    },
+    "header": {
+      "type": "box",
+      "layout": "horizontal",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "baseline",
+          "contents": [
+            {
+              "type": "icon",
+              "size": "xxl",
+              "url": "https://modcumram.com/logo_sapa.png"
+            }
+          ]
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "flex": 5,
+          "contents": [
+            {
+              "type": "text",
+              "text": "รายงานสภาพอากาศ",
+              "weight": "bold",
+              "color": "#aaaaaa",
+              "size": "md",
+              "gravity": "top"
+            },
+            {
+              "type": "text",
+              "text": "ข้อมูลกรมอุตุนิยมวิทยา",
+              "weight": "bold",
+              "color": "#aaaaaa",
+              "size": "lg",
+              "gravity": "top"
+            }
+          ]
+        }
+      ]
+    },
+    "hero": {
+      "type": "image",
+      "url": "https://img.tsood.com/userfiles/image/3-1(10).jpg",
+      "size": "full",
+      "aspectRatio": "1:1",
+      "aspectMode": "cover",
+      "action": {
+        "type": "uri",
+        "uri": "https://www.tmd.go.th/programs/uploads/satda/latest.jpg"
       }
-    ]
-  },
-  "footer": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "footer"
-      }
-    ]
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "margin": "sm",
+          "text": "สภาพอากาศและการจราจร",
+          "weight": "bold",
+          "size": "md",
+          "wrap": true
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "margin": "xs",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "ที่มาข้อมูล กรมอุตินิยมวิทยาและ จส.100",
+                  "wrap": true,
+                  "color": "#666666",
+                  "size": "sm",
+                  "flex": 6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "spacing": "sm",
+      "contents": [
+        {
+          "type": "button",
+          "style": "link",
+          "color": "#FFFFFF",
+          "height": "sm",
+          "action": {
+            "type": "message",
+            "label": "พยากรณ์อากาศประจำวัน",
+            "text": "อากาศกรุงเทพ"
+          }
+        },
+        {
+          "type": "button",
+          "style": "link",
+          "color": "#FFFFFF",
+          "height": "sm",
+          "action": {
+            "type": "uri",
+            "label": "ภาพถ่ายเรดาร์ฝน",
+            "uri": "https://www.tmd.go.th/programs/uploads/satda/latest.jpg"
+          }
+        },
+        {
+          "type": "button",
+          "style": "link",
+          "color": "#FFFFFF",
+          "height": "sm",
+          "action": {
+            "type": "uri",
+            "label": "เรดาห์ตรวจอากาศ",
+            "uri": "http://rain.tvis.in.th/rain_predict_android.php?lat=13.753364&lon=100.4954246"
+          }
+        },
+        {
+          "type": "button",
+          "style": "link",
+          "color": "#FFFFFF",
+          "height": "sm",
+          "action": {
+            "type": "message",
+            "label": "การจราจรและอุบัติเหตุ",
+            "text": "อุบัติเหตุ"
+          }
+        }
+      ]
+    }
   }
+}
 }
     ]
   }
