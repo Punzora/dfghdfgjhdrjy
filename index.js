@@ -198,7 +198,6 @@ function ledOn (sender, text) {
         }
       ]
     }
-  }
 }
     ]
   }
