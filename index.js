@@ -154,25 +154,9 @@ function ledOn (sender, text) {
   let data = {
     to: sender,
     messages: [
-      {
-  "type": "template",
-  "altText": "this is a confirm template",
-  "template": {
-    "type": "confirm",
-    "actions": [
-      {
-        "type": "message",
-        "label": "Yes",
-        "text": "Yes"
-      },
-      {
-        "type": "message",
-        "label": "No",
-        "text": "No"
-      }
-    ],
-    "text": "Continue?"
-  }
+   
+        type: 'text',
+        text: 'ไฟดวงที่.1.เปิดเเล้วขอรับนายท่าน'
     ]
   }
   request({
