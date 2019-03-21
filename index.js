@@ -155,22 +155,54 @@ function ledOn (sender, text) {
     to: sender,
     messages: [
   {
-  "type": "box",
-  "layout": "vertical",
-  "contents": [
-    {
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "header": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "Header",
+          "align": "center"
+        }
+      ]
+    },
+    "hero": {
       "type": "image",
-      "url": "https://example.com/flex/images/image.jpg"
+      "url": "https://developers.line.me/assets/images/services/bot-designer-icon.png",
+      "size": "full",
+      "aspectRatio": "1.51:1",
+      "aspectMode": "fit"
     },
-    {
-      "type": "separator"
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "Body",
+          "align": "center"
+        }
+      ]
     },
-    {
-      "type": "text",
-      "text": "Text in the box"
+    "footer": {
+      "type": "box",
+      "layout": "horizontal",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "Button",
+            "uri": "https://linecorp.com"
+          }
+        }
+      ]
     }
-  ]
-}
     ]
   }
   request({
