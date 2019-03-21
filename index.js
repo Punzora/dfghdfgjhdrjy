@@ -154,9 +154,10 @@ function ledOn (sender, text) {
   let data = {
     to: sender,
     messages: [
-    {  
-        type: 'text',
-        text: 'ไฟดวงที่.1.ปิดเเล้วขอรับนายท่าน' 
+   {
+    "line": {
+        ...
+    }
 }
     ]
   }
