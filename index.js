@@ -85,10 +85,37 @@ function sendText (sender, text) {
   let data = {
     to: sender,
     messages: [
+    //{
+      //  type: 'text',
+       // text: 'คำสั่งมีดังนี้\n1.เปิด1 =เปิดไฟดวงที่1\n2.เปิด2 =เปิดไฟดวงที่2\n3.เปิด3 =เปิดไฟดวงที่3\n4.เปิดทั้งหมด =เปิดไฟทั้งหมด\n.........\n5.ปิด1 =ปิดไฟดวงที่1\n6.ปิด2 =ปิดไฟดวงที่2\n7.ปิด3 =ปิดไฟดวงที่3\n8.ปิดทั้งหมด =ปิดไฟทั้งหมด'
+   // }
     {
-        type: 'text',
-        text: 'คำสั่งมีดังนี้\n1.เปิด1 =เปิดไฟดวงที่1\n2.เปิด2 =เปิดไฟดวงที่2\n3.เปิด3 =เปิดไฟดวงที่3\n4.เปิดทั้งหมด =เปิดไฟทั้งหมด\n.........\n5.ปิด1 =ปิดไฟดวงที่1\n6.ปิด2 =ปิดไฟดวงที่2\n7.ปิด3 =ปิดไฟดวงที่3\n8.ปิดทั้งหมด =ปิดไฟทั้งหมด'
-    }
+  "type": "template",
+  "altText": "เปิดไฟ",
+  "template": {
+    "type": "buttons",
+    "actions": [
+      {
+        "type": "message",
+        "label": "เปิดไฟดวงที่1",
+        "text": "เปิดไฟดวงที่1"
+      },
+      {
+        "type": "message",
+        "label": "เปิดไฟดวงที่2",
+        "text": "เปิดไฟดวงที่2"
+      },
+      {
+        "type": "message",
+        "label": "เปิดไฟดวงที่3",
+        "text": "เปิดไฟดวงที่3"
+      }
+    ],
+    "thumbnailImageUrl": "https://yt3.ggpht.com/a-/AAuE7mDIwl8UZy1HlNWiFo0kFOh9HVeubcKKepEDtQ=s900-mo-c-c0xffffffff-rj-k-no",
+    "title": "เปิดปิดไฟผ่านไลน์",
+    "text": "สำหรับเปิด"
+  }
+}
     ]
   }
   request({
@@ -154,32 +181,11 @@ function ledOn (sender, text) {
   let data = {
     to: sender,
     messages: [
-        //{
-       // type: 'text',
-        //text: 'ไฟดวงที่.1.เปิดเเล้วขอรับนายท่าน'
-        //}
-      {
-  "type": "template",
-  "altText": "this is a buttons template",
-  "template": {
-    "type": "buttons",
-    "actions": [
-      {
-        "type": "message",
-        "label": "Action 1",
-        "text": "Action 1"
-      },
-      {
-        "type": "message",
-        "label": "Action 2",
-        "text": "Action 2"
-      }
-    ],
-    "thumbnailImageUrl": "https://cdn.pixabay.com/photo/2017/03/30/20/22/black-2189644_960_720.png",
-    "title": "Title",
-    "text": "Text"
-  }
-}
+        {
+        type: 'text',
+        text: 'ไฟดวงที่.1.เปิดเเล้วขอรับนายท่าน'
+        }
+      
     ]
   }
   request({
