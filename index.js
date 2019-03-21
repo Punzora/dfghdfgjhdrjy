@@ -154,55 +154,25 @@ function ledOn (sender, text) {
   let data = {
     to: sender,
     messages: [
-  {
-  "type": "flex",
-  "altText": "Flex Message",
-  "contents": {
-    "type": "bubble",
-    "direction": "ltr",
-    "header": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
-        {
-          "type": "text",
-          "text": "Header",
-          "align": "center"
-        }
-      ]
-    },
-    "hero": {
-      "type": "image",
-      "url": "https://developers.line.me/assets/images/services/bot-designer-icon.png",
-      "size": "full",
-      "aspectRatio": "1.51:1",
-      "aspectMode": "fit"
-    },
-    "body": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
-        {
-          "type": "text",
-          "text": "Body",
-          "align": "center"
-        }
-      ]
-    },
-    "footer": {
-      "type": "box",
-      "layout": "horizontal",
-      "contents": [
-        {
-          "type": "button",
-          "action": {
-            "type": "uri",
-            "label": "Button",
-            "uri": "https://linecorp.com"
-          }
-        }
-      ]
-    }
+      {
+  "type": "template",
+  "altText": "this is a confirm template",
+  "template": {
+    "type": "confirm",
+    "actions": [
+      {
+        "type": "message",
+        "label": "Yes",
+        "text": "Yes"
+      },
+      {
+        "type": "message",
+        "label": "No",
+        "text": "No"
+      }
+    ],
+    "text": "Continue?"
+  }
     ]
   }
   request({
