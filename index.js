@@ -89,26 +89,31 @@ function sendText (sender, text) {
       //  type: 'text',
        // text: 'คำสั่งมีดังนี้\n1.เปิด1 =เปิดไฟดวงที่1\n2.เปิด2 =เปิดไฟดวงที่2\n3.เปิด3 =เปิดไฟดวงที่3\n4.เปิดทั้งหมด =เปิดไฟทั้งหมด\n.........\n5.ปิด1 =ปิดไฟดวงที่1\n6.ปิด2 =ปิดไฟดวงที่2\n7.ปิด3 =ปิดไฟดวงที่3\n8.ปิดทั้งหมด =ปิดไฟทั้งหมด'
    // }
-    {
+   {
   "type": "template",
-  "altText": "เปิดไฟ",
+  "altText": "this is a buttons template",
   "template": {
     "type": "buttons",
     "actions": [
       {
         "type": "message",
         "label": "เปิดไฟดวงที่1",
-        "text": "เปิดไฟดวงที่1"
+        "text": "เปิด1"
       },
       {
         "type": "message",
         "label": "เปิดไฟดวงที่2",
-        "text": "เปิดไฟดวงที่2"
+        "text": "เปิด2"
       },
       {
         "type": "message",
         "label": "เปิดไฟดวงที่3",
-        "text": "เปิดไฟดวงที่3"
+        "text": "เปิด3"
+      },
+      {
+        "type": "message",
+        "label": "เปิดไฟทั้งหมด",
+        "text": "เปิดทั้งหมด"
       }
     ],
     "thumbnailImageUrl": "https://yt3.ggpht.com/a-/AAuE7mDIwl8UZy1HlNWiFo0kFOh9HVeubcKKepEDtQ=s900-mo-c-c0xffffffff-rj-k-no",
@@ -184,6 +189,13 @@ function ledOn (sender, text) {
         {
         type: 'text',
         text: 'ไฟดวงที่.1.เปิดเเล้วขอรับนายท่าน'
+        }
+      
+    ]
+      messages: [
+        {
+        type: 'text',
+        text: 'ไฟดวงที่.1หฟดพได.เปิดเเล้วขอรับนายท่าน'
         }
       
     ]
