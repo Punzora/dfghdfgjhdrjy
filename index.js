@@ -175,7 +175,7 @@ function ledOn (sender, text) {
         "text": "Action 2"
       }
     ],
-    "thumbnailImageUrl": "SPECIFY_YOUR_IMAGE_URL",
+    "thumbnailImageUrl": "https://cdn.pixabay.com/photo/2017/03/30/20/22/black-2189644_960_720.png",
     "title": "Title",
     "text": "Text"
   }
