@@ -72,6 +72,10 @@ app.post('/webhook', (req, res) => {
     // LED Off
     ledOffall(sender, text)
   }
+    else if (text === '8' || text === 'ปิดไฟ' || text === 'offlight') {
+    // LED Off
+    ledOffl(sender, text)
+  }
 
 
   else {
@@ -89,9 +93,9 @@ function sendText (sender, text) {
       //  type: 'text',
        // text: 'คำสั่งมีดังนี้\n1.เปิด1 =เปิดไฟดวงที่1\n2.เปิด2 =เปิดไฟดวงที่2\n3.เปิด3 =เปิดไฟดวงที่3\n4.เปิดทั้งหมด =เปิดไฟทั้งหมด\n.........\n5.ปิด1 =ปิดไฟดวงที่1\n6.ปิด2 =ปิดไฟดวงที่2\n7.ปิด3 =ปิดไฟดวงที่3\n8.ปิดทั้งหมด =ปิดไฟทั้งหมด'
    // }
-   {
+ {
   "type": "template",
-  "altText": "this is a buttons template",
+  "altText": "Project DNP",
   "template": {
     "type": "buttons",
     "actions": [
@@ -117,8 +121,8 @@ function sendText (sender, text) {
       }
     ],
     "thumbnailImageUrl": "https://yt3.ggpht.com/a-/AAuE7mDIwl8UZy1HlNWiFo0kFOh9HVeubcKKepEDtQ=s900-mo-c-c0xffffffff-rj-k-no",
-    "title": "เปิดปิดไฟผ่านไลน์",
-    "text": "สำหรับเปิด"
+    "title": "IOT By DNP (สำหรับเปิด)",
+    "text": "สำหรับเปิด (ต้องการปิดให้พิมพ์ \"ปิดไฟ\")"
   }
 }
     ]
@@ -511,7 +515,60 @@ function ledOffall (sender, text) {
     if (body) console.log(body)
   })
 }
-
+function ledOffl (sender, text) {
+ 
+ let data = {
+    to: sender,
+    messages: [
+     {
+  "type": "template",
+  "altText": "this is a buttons template",
+  "template": {
+    "type": "buttons",
+    "actions": [
+      {
+        "type": "message",
+        "label": "ปิดไฟดวงที่1",
+        "text": "ปิด1"
+      },
+      {
+        "type": "message",
+        "label": "ปิดไฟดวงที่2",
+        "text": "ปิด2"
+      },
+      {
+        "type": "message",
+        "label": "ปิดไฟดวงที่3",
+        "text": "ปิด3"
+      },
+      {
+        "type": "message",
+        "label": "ปิดไฟทั้งหมด",
+        "text": "ปิดทั้งหมด"
+      }
+    ],
+    "thumbnailImageUrl": "https://yt3.ggpht.com/a-/AAuE7mDIwl8UZy1HlNWiFo0kFOh9HVeubcKKepEDtQ=s900-mo-c-c0xffffffff-rj-k-no",
+    "title": "IOT By DNP (สำหรับปิด)",
+    "text": "สำหรับปิด (ต้องการเปิดให้พิมพ์ \"เปิดไฟ\")"
+  }
+}
+    ]
+  }
+  request({
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '+CH_ACCESS_TOKEN+''
+    },
+    url: 'https://api.line.me/v2/bot/message/push',
+    method: 'POST',
+    body: data,
+    json: true
+  }, function (err, res, body) {
+    if (err) console.log('error')
+    if (res) console.log('success')
+    if (body) console.log(body)
+  })
+}
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
 })
