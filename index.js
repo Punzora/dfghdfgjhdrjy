@@ -154,10 +154,23 @@ function ledOn (sender, text) {
   let data = {
     to: sender,
     messages: [
-   {
-        type: 'text',
-        text: 'ไฟดวงที่.1.ปิดเเล้วขอรับนายท่าน'
-      }
+  {
+  "type": "box",
+  "layout": "vertical",
+  "contents": [
+    {
+      "type": "image",
+      "url": "https://example.com/flex/images/image.jpg"
+    },
+    {
+      "type": "separator"
+    },
+    {
+      "type": "text",
+      "text": "Text in the box"
+    }
+  ]
+}
     ]
   }
   request({
