@@ -192,13 +192,6 @@ function ledOn (sender, text) {
         }
       
     ]
-      messages: [
-        {
-        type: 'text',
-        text: 'ไฟดวงที่.1หฟดพได.เปิดเเล้วขอรับนายท่าน'
-        }
-      
-    ]
   }
   request({
     headers: {
