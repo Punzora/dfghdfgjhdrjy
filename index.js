@@ -95,7 +95,7 @@ function sendText (sender, text) {
    // }
  {
   "type": "template",
-  "altText": "Project DNP",
+  "altText": "Project SE",
   "template": {
     "type": "buttons",
     "actions": [
