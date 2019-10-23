@@ -120,8 +120,9 @@ function sendText (sender, text) {
         "text": "เปิดทั้งหมด"
       }
     ],
-    "thumbnailImageUrl": "https://yt3.ggpht.com/a-/AAuE7mDIwl8UZy1HlNWiFo0kFOh9HVeubcKKepEDtQ=s900-mo-c-c0xffffffff-rj-k-no",
-    "title": "IOT By Got A (สำหรับเปิด)",
+    //"thumbnailImageUrl": "https://yt3.ggpht.com/a-/AAuE7mDIwl8UZy1HlNWiFo0kFOh9HVeubcKKepEDtQ=s900-mo-c-c0xffffffff-rj-k-no",
+     "thumbnailImageUrl": "https://cdn.shopify.com/s/files/1/0201/8228/products/Festoon-Lighting---Outdoor-String-Lights_34407248-3cdf-46fc-91cd-43b56f62b088_800x.jpg?v=1571438537",
+      "title": "IOT By Got A (สำหรับเปิด)",
     "text": "สำหรับเปิด (ต้องการปิดให้พิมพ์ \"ปิดไฟ\")"
   }
 }
