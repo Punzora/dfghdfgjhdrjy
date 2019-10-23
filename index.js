@@ -4,18 +4,18 @@ var request = require('request')
 var app = express()
 var mqtt = require('mqtt');
 // Your Channel access token (long-lived) 
-const CH_ACCESS_TOKEN = 'mBMq4+bnv+GRs4j+OZq71Hd86b539QhX9fDhf0aME1j+aWe73P/bml5eGNnrCC631NVOe4W10DF9CPk0pIAIoU4jtCaKmqcN+9wlCGyT758C8HEpZZ4m6vwR+jobXHYxOlKuJV2qKS2p3aOZDMTC6wdB04t89/1O/w1cDnyilFU=';
+const CH_ACCESS_TOKEN = 'DFnjgf7XJ8t/U2nXvHIcj2e3exiJIabavYasexprRpwGWw0u+UP2GJfrwlffVxydvV0Ds+vvEGaTUFAKfoB4uOoZfVzsJt856pFZ9pwke7b94stwDC9KUKiujQzCLHQ/djCM+fLB0NNsqEI+DXA4LgdB04t89/1O/w1cDnyilFU=';
 // MQTT Host
-var mqtt_host = 'mqtt://m16.cloudmqtt.com';
+var mqtt_host = 'mmqtt://m16.cloudmqtt.com';
 // MQTT Topic
-var mqtt_topic = '/ESP';
+var mqtt_topic = '/ESP/LED';
 // MQTT Config
 var options = {
-    port: 17495,
+    port: 18563,
     host: 'mqtt://m16.cloudmqtt.com',
     clientId: 'mqttjs_' + Math.random().toString(16).substr(2, 8),
-    username: 'cszwalpv',
-    password: 'HuFTaCshWOMC',
+    username: 'rcqjksxp',
+    password: '6phSP4sISGcm',
     keepalive: 60,
     reconnectPeriod: 1000,
     protocolId: 'MQIsdp',
