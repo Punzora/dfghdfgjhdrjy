@@ -121,7 +121,7 @@ function sendText (sender, text) {
       }
     ],
     "thumbnailImageUrl": "https://yt3.ggpht.com/a-/AAuE7mDIwl8UZy1HlNWiFo0kFOh9HVeubcKKepEDtQ=s900-mo-c-c0xffffffff-rj-k-no",
-    "title": "IOT By DNP (สำหรับเปิด)",
+    "title": "IOT By Got A (สำหรับเปิด)",
     "text": "สำหรับเปิด (ต้องการปิดให้พิมพ์ \"ปิดไฟ\")"
   }
 }
@@ -192,7 +192,7 @@ function ledOn (sender, text) {
     messages: [
         {
         type: 'text',
-        text: 'ไฟดวงที่.1.เปิดเเล้วขอรับนายท่าน'
+        text: 'ไฟดวงที่.1.เปิดเเล้วค่ะ'
         }
       
     ]
@@ -236,7 +236,7 @@ function ledOff (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'ไฟดวงที่.1.ปิดเเล้วขอรับนายท่าน'
+        text: 'ไฟดวงที่.1.ปิดเเล้วค่ะ'
       }
     ]
   }
@@ -280,7 +280,7 @@ function ledOn2 (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'ไฟดวงที่.2.เปิดเเล้วขอรับนายท่าน'
+        text: 'ไฟดวงที่.2.เปิดเเล้วค่ะ'
       }
     ]
   }
@@ -323,7 +323,7 @@ function ledOff2 (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'ไฟดวงที่2ปิดเเล้วขอรับนายท่าน'
+        text: 'ไฟดวงที่2ปิดเเล้วค่ะ'
       }
     ]
   }
@@ -367,7 +367,7 @@ function ledOn3 (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'ไฟดวงที่3เปิดเเล้วขอรับนายท่าน'
+        text: 'ไฟดวงที่3เปิดเเล้วค่ะ'
       }
     ]
   }
@@ -410,7 +410,7 @@ function ledOff3 (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'ไฟดวงที่3ปิดเเล้วขอรับนายท่าน'
+        text: 'ไฟดวงที่3ปิดเเล้วค่ะ'
       }
     ]
   }
@@ -453,7 +453,7 @@ function ledOnall (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'ไฟทั้งหมดเปิดเเล้วขอรับนายท่าน'
+        text: 'ไฟทั้งหมดเปิดเเล้วค่ะ'
       }
     ]
   }
@@ -496,7 +496,7 @@ function ledOffall (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'ไฟทั้งหมดปิดเเล้วขอรับนายท่าน'
+        text: 'ไฟทั้งหมดปิดเเล้วค่ะ'
       }
     ]
   }
@@ -548,7 +548,7 @@ function ledOffl (sender, text) {
       }
     ],
     "thumbnailImageUrl": "https://yt3.ggpht.com/a-/AAuE7mDIwl8UZy1HlNWiFo0kFOh9HVeubcKKepEDtQ=s900-mo-c-c0xffffffff-rj-k-no",
-    "title": "IOT By DNP (สำหรับปิด)",
+    "title": "IOT By Got A (สำหรับปิด)",
     "text": "สำหรับปิด (ต้องการเปิดให้พิมพ์ \"เปิดไฟ\")"
   }
 }
